@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './shared/angular-material/angular-material.module';
+import { HttpClientModule } from "@angular/common/http"
 
 
 import { AppComponent } from './app.component';
@@ -21,7 +22,8 @@ import { PostListComponent } from './post/post-list/post-list.component';
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
