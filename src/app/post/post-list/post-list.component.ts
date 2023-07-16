@@ -19,17 +19,18 @@ export class PostListComponent{
 
   constructor(public postsService: PostService){ }
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
     this.postsService.getPosts();
     this.postsSub = this.postsService.getPostUpdateListener()
       .subscribe((posts: Post[])=>{
         this.posts = posts
       })
   }
+
+  onDelete(postId: string){
+    this.postsService.deletePost(postId)
+  }
+
   ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
     this.postsSub.unsubscribe();
   }
 }
